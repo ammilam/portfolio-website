@@ -11,11 +11,11 @@
    args:
    - 'run'
    - 'deploy'
-   - 'SERVICE-NAME'
+   - 'portfolio-website'
    - '--image'
    - 'gcr.io/$PROJECT_ID/portfolio-website:$COMMIT_SHA'
    - '--region'
-   - 'REGION'
+   - 'us-central1'
    - '--platform'
    - 'managed'
  images:
