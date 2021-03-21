@@ -20,6 +20,5 @@
    - 'managed'
    - '--allow-unauthenticated'
    - '--set-env-vars' 
-   - 'PORT=80'
  images:
  - 'gcr.io/$PROJECT_ID/portfolio-website:$COMMIT_SHA'
