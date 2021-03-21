@@ -19,5 +19,6 @@
    - '--platform'
    - 'managed'
    - '--allow-unauthenticated'
+   - '-port 80'
  images:
  - 'gcr.io/$PROJECT_ID/portfolio-website:$COMMIT_SHA'
