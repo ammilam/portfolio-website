@@ -8,8 +8,6 @@
  # Deploy container image to Cloud Run
  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
    entrypoint: gcloud
-   env:
-   - 'PORT=80'
    args:
    - 'run'
    - 'deploy'
@@ -21,5 +19,6 @@
    - '--platform'
    - 'managed'
    - '--allow-unauthenticated'
+   - 'PORT=80'
  images:
  - 'gcr.io/$PROJECT_ID/portfolio-website:$COMMIT_SHA'
