@@ -1,4 +1,3 @@
 FROM nginx:alpine
 COPY . /usr/share/nginx/html
-EXPOSE 80
-ENV PORT 80
+EXPOSE 8080
