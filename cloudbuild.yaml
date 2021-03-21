@@ -19,6 +19,5 @@
    - '--platform'
    - 'managed'
    - '--allow-unauthenticated'
-   - '--set-env-vars' 
  images:
  - 'gcr.io/$PROJECT_ID/portfolio-website:$COMMIT_SHA'
