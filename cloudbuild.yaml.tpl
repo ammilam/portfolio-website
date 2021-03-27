@@ -11,7 +11,7 @@
    args:
    - 'run'
    - 'deploy'
-   - 'portfolio-website'
+   - '${NAME}'
    - '--image'
    - 'gcr.io/$PROJECT_ID/portfolio-website:$COMMIT_SHA'
    - '--region'
