@@ -1,4 +1,5 @@
+
 terraform.tfstate*
+.terraform*
 account.json
-.terraform
 backend.tf
