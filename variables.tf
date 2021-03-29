@@ -1,5 +1,7 @@
 variable "repo" {
-  type = string
+  type    = string
+  default = "portfolio-website"
+
 }
 
 variable "project" {
@@ -7,5 +9,6 @@ variable "project" {
 }
 
 variable "repo_owner" {
-  type = string
+  type    = string
+  default = "ammilam"
 }

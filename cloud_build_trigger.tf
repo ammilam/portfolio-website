@@ -1,5 +1,17 @@
 provider "google" {}
 
+resource "google_project_service" "project" {
+  project = var.project
+  for_each = toset([
+    "cloudbuild.googleapis.com",
+    "cloudrun.googleapis.com",
+
+  ])
+  service = "iam.googleapis.com"
+
+  disable_dependent_services = false
+}
+
 resource "google_cloudbuild_trigger" "portfolio_website" {
   provider = google-beta
   filename = "cloudbuild.yaml"
@@ -11,18 +23,6 @@ resource "google_cloudbuild_trigger" "portfolio_website" {
     push {
       branch = "main"
     }
-
   }
-}
-
-resource "google_project_service" "project" {
-  project = var.project
-  for_each = toset([
-    "cloudbuild.googleapis.com",
-    "cloudrun.googleapis.com",
-
-  ])
-  service = "iam.googleapis.com"
-
-  disable_dependent_services = false
+  depends_on = [google_project_service.project]
 }
