@@ -9,7 +9,3 @@ variable "project" {
 variable "repo_owner" {
   type = string
 }
-
-variable "name" {
-  type = string
-}
