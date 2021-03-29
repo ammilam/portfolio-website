@@ -53,16 +53,16 @@ export GOOGLE_APPLICATION_CREDENTIALS="account.json"
 echo "
 terraform {
   backend "\"gcs\""{
-    bucket      = "\"${PROJECT}-terraform-state\""
-    prefix      = "\"sandbox\""
+    bucket      = "\"${PROJECT}-cian-website-tfstate\""
+    prefix      = "\"portfolio\""
     credentials = "\"account.json\""
   }
 }
 " > backend.tf
 
-if [[ -z $(gsutil ls|grep $PROJECT-terraform-state) ]]
+if [[ -z $(gsutil ls|grep ${PROJECT}-cian-website-tfstate) ]]
 then
-    gsutil mb gs://$PROJECT-terraform-state
+    gsutil mb gs://${PROJECT}-cian-website-tfstate
 fi
-
-echo "Your remote state bucket is ${PROJECT}-terraform-state"
+terraform fmt --recursive
+echo "Your remote state bucket is ${PROJECT}-cian-website-tfstate"
