@@ -13,6 +13,7 @@ This project serves two functions...
 - cd into the directory and execute the following:
 
 ```
+./create-backend.sh
 terraform init
 terraform apply
 ```
