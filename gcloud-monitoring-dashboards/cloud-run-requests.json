@@ -1,0 +1,57 @@
+{
+  "displayName": "Cloud Run Requests",
+  "etag": "d33e1d1acaf1ec9137b6ac88271ea981",
+  "mosaicLayout": {
+    "columns": 12,
+    "tiles": [
+      {
+        "height": 5,
+        "widget": {
+          "title": "Requests per minute",
+          "xyChart": {
+            "chartOptions": {
+              "mode": "COLOR"
+            },
+            "dataSets": [
+              {
+                "minAlignmentPeriod": "60s",
+                "plotType": "STACKED_AREA",
+                "timeSeriesQuery": {
+                  "timeSeriesFilter": {
+                    "aggregation": {
+                      "alignmentPeriod": "60s",
+                      "groupByFields": [
+                        "metric.label.\"status\"",
+                        "metric.label.\"remote_ip\"",
+                        "resource.label.\"service_name\""
+                      ],
+                      "perSeriesAligner": "ALIGN_RATE"
+                    },
+                    "filter": "metric.type=\"logging.googleapis.com/user/cloud-run-requests\" resource.type=\"cloud_run_revision\" metric.label.\"url\"!=monitoring.regex.full_match(\".+(assets|favicon).*\")",
+                    "secondaryAggregation": {
+                      "alignmentPeriod": "60s",
+                      "crossSeriesReducer": "REDUCE_SUM",
+                      "groupByFields": [
+                        "metric.label.\"status\"",
+                        "metric.label.\"remote_ip\"",
+                        "resource.label.\"service_name\""
+                      ],
+                      "perSeriesAligner": "ALIGN_COUNT"
+                    }
+                  }
+                }
+              }
+            ],
+            "timeshiftDuration": "0s",
+            "yAxis": {
+              "label": "y1Axis",
+              "scale": "LINEAR"
+            }
+          }
+        },
+        "width": 12
+      }
+    ]
+  },
+  "name": "projects/481439831314/dashboards/6e0fc758-3b19-4f04-a7a0-e8859eb2e955"
+}
