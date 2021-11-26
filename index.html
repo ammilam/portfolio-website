@@ -57,7 +57,6 @@
                         <h2 class="heading">About Me</h2>
                         <div class="content">
                             <p>Experienced IT professional who has assumed many different positions, from Help Desk and Tier 2 Support to the current role as a DevOps Engineer that creates scalable Cloud Solutions through Infrastructure-as-Code. Has been involved in several notable methodology/tech/cultural shifts, such as: an Enterprise DevOps Implementation, Scaled Agile Framework adoption for 20+ globally distributed development teams, and an Enterprise cloud adoption/migration for a large scale healthcare application with ~100 microservices. Passionate about designing and implementing monitoring-at-scale solutions that enable companies to create and maintain more reliable applications and infrastructure.</p>
-
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </section><!--//section-->
@@ -68,14 +67,25 @@
                         <div class="content">
 
 
-
                             <div class="item row">
                                 <a class="col-md-4 col-12" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/devstudio-bootstrap-theme-for-web-development-agencies-and-developers/" target="_blank">
                                 </a>
                                 <div class="desc col-l-8 col-12">
-                                    <h3 class="title"><a href="https://github.com/ammilam/mac-intro" target="_blank">GCP/Prometheus Stack/Gitlab/Terraform Monitoring as Code Implementation</a></h3>
-                                    <p class="float-left"> Cloud resources are meant to be expendable, being spun up/down at will (pets vs cattle) while also being provisioned with speed and precision. This is achieved in an organizationally standardized and repeatable manner as code while also being made more widely available to more teams through merge requests with governance/approval processes. In the end, managing infrastructure as code allows cloud resources to be dynamic, follow an enterprise standard, have governance at all levels by SMEs, have versioning, and be better prepared for a disaster. This project attempts to lay a general framework to play with a MaC implementation, as well as a kubernetes Gitops implementation.</p>
-                                    <p><a class="more-link" href="https://github.com/ammilam/mac-intro" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
+                                    <h3 class="title"><a href="https://registry.terraform.io/modules/ammilam/gke-kube-prometheus-stack/google/latest" target="_blank">GKE kube-prometheus-stack Terraform Module</a></h3>
+                                    <p class="float-left"> A Terraform module that deploys a kube-prometheus-stack solution and supporting resources onto a GKE cluster. This module is designed to use GCE ingresses with the option for Google OpenID Connect to be enabled for Grafana.</p>
+                                    <p><a class="more-link" href="https://registry.terraform.io/modules/ammilam/gke-kube-prometheus-stack/google/latest" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
+                                    <h3 class="title"><a href="https://registry.terraform.io/modules/ammilam/counter-metric/google/latest" target="_blank">Google Counter Logging Metric Terraform Module</a></h3>
+                                    <p class="float-left"> A Terraform module that deploys a Google Counter Logging Metric.</p>
+                                    <p><a class="more-link" href="https://registry.terraform.io/modules/ammilam/counter-metric/google/latest" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
+                                    <h3 class="title"><a href="https://registry.terraform.io/modules/ammilam/distribution-metric/google/latest" target="_blank">Google Distribution Logging Metric Terraform Module</a></h3>
+                                    <p class="float-left"> A Terraform module that deploys a Google Distribution Logging Metric.</p>
+                                    <p><a class="more-link" href="https://registry.terraform.io/modules/ammilam/distribution-metric/google/latest" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
+                                    <h3 class="title"><a href="https://registry.terraform.io/modules/ammilam/grafana-dashboards/kubernetes/latest" target="_blank">Grafana Dashboards Terraform Module</a></h3>
+                                    <p class="float-left"> A Terraform module provisions Grafana Dashboards as code by creating k8s configmaps from exported Grafana dashboard(s).</p>
+                                    <p><a class="more-link" href="https://registry.terraform.io/modules/ammilam/grafana-dashboards/kubernetes/latest" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
+                                    <h3 class="title"><a href="https://ammilam.github.io/helm-charts/" target="_blank">My Helm Chart Repository</a></h3>
+                                    <p class="float-left"> My public helm chart repository.</p>
+                                    <p><a class="more-link" href="https://ammilam.github.io/helm-charts/" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
                                     <h3 class="title"><a href="https://github.com/ammilam/portfolio-website" target="_blank">Serverless GitOps Deployed Personal Portfolio Website (this website!)</a></h3>
                                     <p class="float-left"> Simple containerized Nodejs portfolio website deployed to Cloud Run via Terraform and Cloud Build</p>
                                     <p><a class="more-link" href="https://github.com/ammilam/portfolio-website" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
@@ -92,7 +102,22 @@
                         <h2 class="heading">Work Experience</h2>
                         <div class="content">
                             <div class="item">
+                                <h3 class="title">DevOps Engineer- <span class="place"><a href="#">DaVita Kidney Care</a></span> <span class="year">(April 2021 - Present)</span></h3>
+                                <ul>
+                                <li><div class="item">
                                 <h3 class="title">Site Reliability Engineer - <span class="place"><a href="#">DaVita Kidney Care</a></span> <span class="year">(Jan 2020 - Present)</span></h3>
+                                <ul>
+                                <li>Designed, developed, and maintained various Cloud Monitoring Terraform modules that deployed standardized resources to ensure every Cloud solution had the resources required to be more reliable, easier to maintain, and had the data necessary to provide quick and impactful enhancements</li>
+                                <li>Created custom monitoring and auto-healing solutions for GKE (Google Kubernetes Engine) clusters and related services</li>
+                                <li>Designed Cloud based serverless functions and messaging queue solutions (PubSub) to manage the flow of incidents from Cloud resources to on-call support systems located in an on-prem data center</li>
+                                <li>Designed and maintained various implementations of shared APIs that allowed teams manage everything as code, examples include: Gitlab, Consul, Arifactory, and Vault.</li>
+                                <li>Produced Architectural Documents to be digested by downstream consumers to allow for the easy use and implementation of various Cloud solutions</li>
+                                <li>Created pipeline monitoring solution to capture Terraform and CICD errors during pipeline runs to address systemic problems in Terraform code and within Gitlab CICD templates</li>
+                                <li>Mentored teams across the enterprise to help bring the entire organization into the DevOps space</li>
+                            </ul>
+
+                            </div><!--//item--></li>
+                                <h3 class="title">Site Reliability Engineer - <span class="place"><a href="#">DaVita Kidney Care</a></span> <span class="year">(Jan 2020 - April 2021)</span></h3>
                                 <ul>
                                 <li>Architected and built Cloud resources in GCP as code using Terraform pipelines in Gitlab</li>
                                 <li>Collaborated with cloud migration team to migrate Java microservices from on-prem Docker Data Center to GKE in Google Cloud</li>
